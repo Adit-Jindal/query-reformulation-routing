@@ -7,4 +7,14 @@ google-generativeai==0.8.3
 numpy
 pandas
 tqdm
-beir==2.0.0 --config-settings="--install-option=--no-deps"
+# beir==2.0.0 --config-settings="--install-option=--no-deps"
+# run_dataset.py no longer needs beir or the ollama python package (it talks to Ollama over HTTP
+# and reads the BEIR files directly), so the pytrec_eval / SSL problems from beir are gone.
+# pytrec_eval-terrier
+# bm25s==0.2.6
+# sentence-transformers==3.3.1
+# numpy
+# pandas
+pyarrow
+requests
+# tqdm
