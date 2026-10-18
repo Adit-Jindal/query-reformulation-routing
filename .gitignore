@@ -5,3 +5,5 @@ Proposal_prep/
 store/
 cache/
 *__pycache__/
+results/**/*.csv
+results/*.csv

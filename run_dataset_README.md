@@ -1,4 +1,4 @@
-# run.py -- one script per dataset
+# run_dataset.py -- one script per dataset
 
 ## Setup
     pip install -r requirements.txt        # if pyarrow has no wheel for your Python, use a 3.12/3.13 venv
@@ -6,15 +6,15 @@
     ollama list                            # copy the exact model tag for --model
 
 ## Always dry-run first (10 queries, writes to store/<ds>__limit10, touches nothing else)
-    python run.py --dataset scifact --model <tag> --limit 10 --workers 3
+    python run_dataset.py --dataset scifact --model <tag> --limit 10 --workers 3
 Check: no errors, "Generation finished ... failed=0 (or few)", summary line prints mean nDCG@10 per action.
 
 ## Full runs (priority order; each is resumable -- just re-run the same command)
-    python run.py --dataset scifact          --model <tag> --workers 3 --reuse-legacy-passages
-    python run.py --dataset trec-covid       --model <tag> --workers 3 --reuse-legacy-passages
-    python run.py --dataset nfcorpus         --model <tag> --workers 3
-    python run.py --dataset fiqa             --model <tag> --workers 3
-    python run.py --dataset webis-touche2020 --model <tag> --workers 3
+    python run_dataset_.py --dataset scifact          --model <tag> --workers 3 --reuse-legacy-passages
+    python run_dataset_.py --dataset trec-covid       --model <tag> --workers 3 --reuse-legacy-passages
+    python run_dataset_.py --dataset nfcorpus         --model <tag> --workers 3
+    python run_dataset_.py --dataset fiqa             --model <tag> --workers 3
+    python run_dataset_.py --dataset webis-touche2020 --model <tag> --workers 3
 `--reuse-legacy-passages` imports the passages from your earlier cache/<ds>/generations.jsonl. Use it ONLY if the
 passage prompt and model were identical to this script's (see PASSAGE_PROMPT); otherwise omit it and regenerate.
 Existing cache/<ds>/ indexes (BM25, dense) are reused; the script checks the corpus order matches.
@@ -38,7 +38,7 @@ Existing cache/<ds>/ indexes (BM25, dense) are reused; the script checks the cor
     run.log
 
 ## Using it
-    from run import Store
+    from run_dataset import Store
     s = Store("store/scifact")
     s.metric_matrix("ndcg10", "bm25")      # qid x action (seed-averaged); include_extra=True adds prf_k5/rocchio/decomp_orig
     s.gain_matrix("ndcg10", "dense")       # tau_a(q) = metric(a) - metric(a0)
