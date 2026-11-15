@@ -1,0 +1,15 @@
+{
+  "C1_router_vs_bestfixed.csv": "bb2c7188ae4f360d35dec5637280a4eede55f758d4db48d817daf2d96078ef2c",
+  "C1_router_vs_const.csv": "765a8314e72f8e8cdd863fc2d028926d40fb60eafdcf2fd7d82510e183128759",
+  "C2_action_choice.csv": "43e3487ab5b6d5d19dec06d51ee93e3ac9a0490198967bec8081c88e19911363",
+  "C2_confusion.csv": "320a979360ecb4ff03966eddac79059e3e685f6fc5a932fd2ee49c791a0c94c1",
+  "C3_win_loss.csv": "a26f1563256ddc206f255c919606d35639c4040052000e8bc06a96622b3da97a",
+  "C4_by_query_type.csv": "06e9b86da6eed089fe00ee5814c6aba1a1eaf87a47c5b98bf8dbef680a03eda6",
+  "C5_node_calibration.csv": "ea093d71f73149d4aa527a891ee86504bb96c059041c5945194ac936ba8c6ab0",
+  "C6_stability.csv": "4099e2fa8bd63b9d49281b455a72a2a7e522aeac73095628e040f0bfcecfdad8",
+  "C7_null_distribution.csv": "f7231aeff5d54e7cc98ba2caaf1016214ca151680fae7666f3da2a2587a58c11",
+  "C7_null_summary.csv": "6332ef9e795db3526564b4d4966df992b365062ed81086fb470bc0d32fd6b4ab",
+  "C8_lambda_sweep.csv": "2300dab6800180354ae8de651eee77321e1061023bd49aa7581fd8791e92d488",
+  "C9_nfcorpus_dense.csv": "53c40e253c802edb557f470b6fc6bb669be8728461fe15533c1283d2849cfdd0",
+  "C9_nfcorpus_dense_per_query.csv": "c4340d13feb61934ffbf0e4a35ab923f89613ff4bf96055f7f74b1e1b97f0835"
+}

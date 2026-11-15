@@ -1,0 +1,332 @@
+{
+  "settings": {
+    "stores": [
+      "store/scifact",
+      "store/trec-covid",
+      "store/nfcorpus",
+      "store/fiqa",
+      "store/webis-touche2020"
+    ],
+    "retrievers": [
+      "bm25",
+      "dense"
+    ],
+    "B": 5000,
+    "seed": 0,
+    "eps": [
+      0.05,
+      0.01
+    ],
+    "tie_rule": "a0 wins ties (exact); tol variants 1e-09",
+    "seeds": [
+      0,
+      1,
+      2
+    ],
+    "n_seeds": 3,
+    "ref_action": "query2doc",
+    "git_commit": "d0fef27a8e4229897380eea6d122b03dc9f6a6dd"
+  },
+  "n_queries": {
+    "bm25": 1370,
+    "dense": 1370
+  },
+  "headline": {
+    "bm25": {
+      "a0": 0.3616475260177586,
+      "best_fixed_action": "query2doc",
+      "best_fixed": 0.4046667794994929,
+      "oracle_crossfit": 0.46453364978166267,
+      "oracle_naive": 0.4778094506394934,
+      "headroom_vs_a0": 0.10288612376390405,
+      "headroom_vs_best_fixed": 0.05986687028216975,
+      "optimism_gap": 0.013275800857830755,
+      "oracle_go_rate": 0.5138686131386861,
+      "tied_best_frac": 0.4335766423357664
+    },
+    "dense": {
+      "a0": 0.413414769394482,
+      "best_fixed_action": "query2doc",
+      "best_fixed": 0.44094464569264374,
+      "oracle_crossfit": 0.5213823264782002,
+      "oracle_naive": 0.5290428527465809,
+      "headroom_vs_a0": 0.10796755708371814,
+      "headroom_vs_best_fixed": 0.08043768078555641,
+      "optimism_gap": 0.007660526268380763,
+      "oracle_go_rate": 0.5065693430656935,
+      "tied_best_frac": 0.43503649635036495
+    }
+  },
+  "expected_findings": {
+    "ref_action_best_fixed_everywhere": {
+      "ref": "query2doc",
+      "holds": true,
+      "exceptions": []
+    },
+    "ref_vs_strongest_competitor": [
+      {
+        "retriever": "bm25",
+        "dataset": "scifact",
+        "n": 300,
+        "comparison": "query2doc_vs_strongest_competitor(hyde)",
+        "mean_diff": 0.032,
+        "ci_lo": 0.0123,
+        "ci_hi": 0.0514,
+        "prob_ref_better": 0.9988
+      },
+      {
+        "retriever": "bm25",
+        "dataset": "trec-covid",
+        "n": 50,
+        "comparison": "query2doc_vs_strongest_competitor(decomp)",
+        "mean_diff": 0.0824,
+        "ci_lo": 0.0406,
+        "ci_hi": 0.1284,
+        "prob_ref_better": 1.0
+      },
+      {
+        "retriever": "bm25",
+        "dataset": "nfcorpus",
+        "n": 323,
+        "comparison": "query2doc_vs_strongest_competitor(decomp)",
+        "mean_diff": 0.0342,
+        "ci_lo": 0.0217,
+        "ci_hi": 0.0477,
+        "prob_ref_better": 1.0
+      },
+      {
+        "retriever": "bm25",
+        "dataset": "fiqa",
+        "n": 648,
+        "comparison": "query2doc_vs_strongest_competitor(a0)",
+        "mean_diff": 0.041,
+        "ci_lo": 0.0294,
+        "ci_hi": 0.0527,
+        "prob_ref_better": 1.0
+      },
+      {
+        "retriever": "bm25",
+        "dataset": "webis-touche2020",
+        "n": 49,
+        "comparison": "query2doc_vs_strongest_competitor(prf)",
+        "mean_diff": 0.0666,
+        "ci_lo": 0.0251,
+        "ci_hi": 0.1084,
+        "prob_ref_better": 0.9988
+      },
+      {
+        "retriever": "bm25",
+        "dataset": "ALL",
+        "n": 1370,
+        "comparison": "query2doc_vs_strongest_competitor(a0)",
+        "mean_diff": 0.043,
+        "ci_lo": 0.0357,
+        "ci_hi": 0.0507,
+        "prob_ref_better": 1.0
+      },
+      {
+        "retriever": "dense",
+        "dataset": "scifact",
+        "n": 300,
+        "comparison": "query2doc_vs_strongest_competitor(hyde)",
+        "mean_diff": 0.0071,
+        "ci_lo": -0.0003,
+        "ci_hi": 0.0147,
+        "prob_ref_better": 0.9708
+      },
+      {
+        "retriever": "dense",
+        "dataset": "trec-covid",
+        "n": 50,
+        "comparison": "query2doc_vs_strongest_competitor(hyde)",
+        "mean_diff": 0.048,
+        "ci_lo": 0.0173,
+        "ci_hi": 0.0808,
+        "prob_ref_better": 0.9992
+      },
+      {
+        "retriever": "dense",
+        "dataset": "nfcorpus",
+        "n": 323,
+        "comparison": "query2doc_vs_strongest_competitor(hyde)",
+        "mean_diff": 0.003,
+        "ci_lo": -0.0009,
+        "ci_hi": 0.0074,
+        "prob_ref_better": 0.9328
+      },
+      {
+        "retriever": "dense",
+        "dataset": "fiqa",
+        "n": 648,
+        "comparison": "query2doc_vs_strongest_competitor(a0)",
+        "mean_diff": 0.0064,
+        "ci_lo": -0.0065,
+        "ci_hi": 0.0193,
+        "prob_ref_better": 0.8344
+      },
+      {
+        "retriever": "dense",
+        "dataset": "webis-touche2020",
+        "n": 49,
+        "comparison": "query2doc_vs_strongest_competitor(hyde)",
+        "mean_diff": 0.0202,
+        "ci_lo": 0.0015,
+        "ci_hi": 0.0403,
+        "prob_ref_better": 0.9832
+      },
+      {
+        "retriever": "dense",
+        "dataset": "ALL",
+        "n": 1370,
+        "comparison": "query2doc_vs_strongest_competitor(hyde)",
+        "mean_diff": 0.0221,
+        "ci_lo": 0.0174,
+        "ci_hi": 0.0269,
+        "prob_ref_better": 1.0
+      }
+    ],
+    "lowest_prob_ref_beats_competitor": [
+      {
+        "retriever": "dense",
+        "dataset": "fiqa",
+        "comparison": "query2doc_vs_strongest_competitor(a0)",
+        "prob_ref_better": 0.8344
+      },
+      {
+        "retriever": "dense",
+        "dataset": "nfcorpus",
+        "comparison": "query2doc_vs_strongest_competitor(hyde)",
+        "prob_ref_better": 0.9328
+      },
+      {
+        "retriever": "dense",
+        "dataset": "scifact",
+        "comparison": "query2doc_vs_strongest_competitor(hyde)",
+        "prob_ref_better": 0.9708
+      }
+    ],
+    "prf_sign_flips": {
+      "bm25": {
+        "gains": {
+          "scifact": -0.0925,
+          "trec-covid": 0.0031,
+          "nfcorpus": -0.002,
+          "fiqa": -0.0478,
+          "webis-touche2020": 0.0169
+        },
+        "flips": true
+      },
+      "dense": {
+        "gains": {
+          "scifact": -0.0389,
+          "trec-covid": 0.1089,
+          "nfcorpus": 0.0057,
+          "fiqa": -0.0445,
+          "webis-touche2020": 0.0226
+        },
+        "flips": true
+      }
+    },
+    "weakest_action_per_cell": {
+      "decomp_is_weakest_in": 6,
+      "of": 12,
+      "cells": [
+        {
+          "retriever": "bm25",
+          "dataset": "ALL",
+          "weakest": "prf"
+        },
+        {
+          "retriever": "bm25",
+          "dataset": "fiqa",
+          "weakest": "prf"
+        },
+        {
+          "retriever": "bm25",
+          "dataset": "nfcorpus",
+          "weakest": "hyde"
+        },
+        {
+          "retriever": "bm25",
+          "dataset": "scifact",
+          "weakest": "prf"
+        },
+        {
+          "retriever": "bm25",
+          "dataset": "trec-covid",
+          "weakest": "prf"
+        },
+        {
+          "retriever": "bm25",
+          "dataset": "webis-touche2020",
+          "weakest": "hyde"
+        },
+        {
+          "retriever": "dense",
+          "dataset": "ALL",
+          "weakest": "decomp"
+        },
+        {
+          "retriever": "dense",
+          "dataset": "fiqa",
+          "weakest": "decomp"
+        },
+        {
+          "retriever": "dense",
+          "dataset": "nfcorpus",
+          "weakest": "decomp"
+        },
+        {
+          "retriever": "dense",
+          "dataset": "scifact",
+          "weakest": "decomp"
+        },
+        {
+          "retriever": "dense",
+          "dataset": "trec-covid",
+          "weakest": "decomp"
+        },
+        {
+          "retriever": "dense",
+          "dataset": "webis-touche2020",
+          "weakest": "decomp"
+        }
+      ]
+    },
+    "heterogeneity": {
+      "median_sd_true_all_cells": 0.18465829623647068,
+      "n_cells_with_abs_mean_gain_lt_0.02": 17,
+      "median_sd_true_in_those_cells": 0.16919834887164623,
+      "min_sd_true_in_those_cells": 0.07903867462409422,
+      "note": "no threshold is applied; judge by comparing to mean gains"
+    }
+  },
+  "cross_retriever": {
+    "pooled_cells_spearman": [
+      0.594
+    ],
+    "oracle_agreement_ALL": [
+      {
+        "value": 0.4562043795620438,
+        "note": "chance_agreement=0.306"
+      }
+    ],
+    "oracle_kappa_ALL": [
+      0.2166
+    ]
+  },
+  "acceptance": {
+    "n_checks": 120,
+    "n_fail": 0
+  },
+  "caveats": [
+    "TREC-COVID and Touche have ~50 queries: CIs are wide; n is reported in every table.",
+    "nDCG@10 on TREC-COVID depends on incomplete judgments: see judged10_* in A9.",
+    "Cross-fit oracle needs >= 2 seeds (here 3).",
+    "a0 and PRF are seedless (zero seed variance); the noise correction only removes noise from LLM actions.",
+    "Best fixed action is chosen in-sample on each block (it is NOT the train-selected one used in iteration_log).",
+    "Cross-dataset results are descriptive, not a hypothesis test; ALL pools the same queries again, so ALL is excluded from Holm.",
+    "Query-form shares use a heuristic classifier; validate by hand before quoting.",
+    "Cost uses cost_table; latency measured under --workers>1 is inflated."
+  ]
+}

@@ -1,0 +1,25 @@
+\begin{table}[t]\centering\small
+\caption{Action choice of each router versus the oracle (all queries).}\label{tab:c2}
+\begin{tabular}{llllllll}
+\toprule
+retriever & protocol & model & router\_go\_rate & router\_top\_action & router\_top\_share & tv\_distance & agree\_with\_oracle \\
+\midrule
+bm25 & within & const & 1.0000 & query2doc & 1.0000 & 0.8504 & 0.1496 \\
+bm25 & within & stump & 0.8920 & query2doc & 0.8920 & 0.7423 & 0.2029 \\
+bm25 & within & ridge & 0.9759 & query2doc & 0.9360 & 0.7864 & 0.1645 \\
+bm25 & within & gbr & 0.9990 & query2doc & 0.9231 & 0.7735 & 0.1543 \\
+bm25 & lodo & const & 1.0000 & query2doc & 1.0000 & 0.8504 & 0.1496 \\
+bm25 & lodo & stump & 0.9095 & query2doc & 0.9095 & 0.7599 & 0.1861 \\
+bm25 & lodo & ridge & 0.9927 & query2doc & 0.9730 & 0.8234 & 0.1511 \\
+bm25 & lodo & gbr & 1.0000 & query2doc & 0.9964 & 0.8467 & 0.1504 \\
+dense & within & const & 1.0000 & query2doc & 1.0000 & 0.8526 & 0.1474 \\
+dense & within & stump & 0.9012 & query2doc & 0.9012 & 0.7538 & 0.1929 \\
+dense & within & ridge & 0.9810 & query2doc & 0.8236 & 0.6762 & 0.1689 \\
+dense & within & gbr & 0.9988 & query2doc & 0.7961 & 0.6757 & 0.1535 \\
+dense & lodo & const & 1.0000 & query2doc & 1.0000 & 0.8526 & 0.1474 \\
+dense & lodo & stump & 0.9022 & query2doc & 0.9022 & 0.7547 & 0.1869 \\
+dense & lodo & ridge & 0.9964 & query2doc & 0.9248 & 0.7774 & 0.1547 \\
+dense & lodo & gbr & 1.0000 & query2doc & 0.8898 & 0.7423 & 0.1416 \\
+\bottomrule
+\end{tabular}
+\end{table}

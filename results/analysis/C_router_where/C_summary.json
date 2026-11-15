@@ -1,0 +1,714 @@
+{
+  "settings": {
+    "stores": [
+      "store/scifact",
+      "store/trec-covid",
+      "store/nfcorpus",
+      "store/fiqa",
+      "store/webis-touche2020"
+    ],
+    "retrievers": [
+      "bm25",
+      "dense"
+    ],
+    "protocols": [
+      "within",
+      "lodo"
+    ],
+    "models": [
+      "stump",
+      "ridge",
+      "gbr"
+    ],
+    "b0": "results/analysis/B0_query_descriptors.csv",
+    "bucket_cols": null,
+    "min_cell": 15,
+    "lambdas": [
+      0.0,
+      0.002,
+      0.005,
+      0.01,
+      0.02,
+      0.05
+    ],
+    "folds": 5,
+    "repeats": 3,
+    "seed": 0,
+    "boot": 5000,
+    "boot2": 2000,
+    "null_n": 20,
+    "null_repeats": 1,
+    "null_models": [
+      "ridge",
+      "gbr"
+    ],
+    "skip_null": false,
+    "nfc_name": "nfcorpus",
+    "nfc_retrievers": [
+      "dense"
+    ],
+    "no_cache": false,
+    "cache": "cache/C_router",
+    "out": "results/analysis/C_router_where"
+  },
+  "n_queries": {
+    "bm25": 1370,
+    "dense": 1370
+  },
+  "headline_level3_ndcg10_vs_const": [
+    {
+      "retriever": "bm25",
+      "protocol": "within",
+      "model": "stump",
+      "dataset": "nfcorpus",
+      "policy": 0.33880260747292007,
+      "const": 0.34272910637790627,
+      "delta": -0.00392649890498616,
+      "ci": [
+        -0.008203146778875155,
+        -0.0005428520617390564
+      ],
+      "p_wilcoxon_holm": 0.5061163955168725,
+      "cohen_dz": -0.11204075986758202
+    },
+    {
+      "retriever": "bm25",
+      "protocol": "within",
+      "model": "stump",
+      "dataset": "ALL",
+      "policy": 0.4020890608477529,
+      "const": 0.4046667794994929,
+      "delta": -0.0025777186517399893,
+      "ci": [
+        -0.004142383167127781,
+        -0.0011181436627173082
+      ],
+      "p_wilcoxon_holm": NaN,
+      "cohen_dz": -0.08895407409091155
+    },
+    {
+      "retriever": "bm25",
+      "protocol": "within",
+      "model": "ridge",
+      "dataset": "nfcorpus",
+      "policy": 0.34244674649203544,
+      "const": 0.34272910637790627,
+      "delta": -0.0002823598858707616,
+      "ci": [
+        -0.002764772747350051,
+        0.0022330339316652226
+      ],
+      "p_wilcoxon_holm": 1.0,
+      "cohen_dz": -0.012215219185545545
+    },
+    {
+      "retriever": "bm25",
+      "protocol": "within",
+      "model": "ridge",
+      "dataset": "ALL",
+      "policy": 0.40259937960682013,
+      "const": 0.4046667794994929,
+      "delta": -0.0020673998926727926,
+      "ci": [
+        -0.0034459357891452056,
+        -0.0007477349741676595
+      ],
+      "p_wilcoxon_holm": NaN,
+      "cohen_dz": -0.0816754286241072
+    },
+    {
+      "retriever": "bm25",
+      "protocol": "within",
+      "model": "gbr",
+      "dataset": "nfcorpus",
+      "policy": 0.3432287233661572,
+      "const": 0.34272910637790627,
+      "delta": 0.0004996169882509018,
+      "ci": [
+        -0.0034177202971931013,
+        0.004646032101449932
+      ],
+      "p_wilcoxon_holm": 0.912978029438639,
+      "cohen_dz": 0.013430091365414091
+    },
+    {
+      "retriever": "bm25",
+      "protocol": "within",
+      "model": "gbr",
+      "dataset": "ALL",
+      "policy": 0.4022664395640665,
+      "const": 0.4046667794994929,
+      "delta": -0.002400339935426378,
+      "ci": [
+        -0.004209851857765716,
+        -0.0006116966227685336
+      ],
+      "p_wilcoxon_holm": NaN,
+      "cohen_dz": -0.07161159490331832
+    },
+    {
+      "retriever": "bm25",
+      "protocol": "lodo",
+      "model": "stump",
+      "dataset": "nfcorpus",
+      "policy": 0.33964424757341954,
+      "const": 0.34272910637790627,
+      "delta": -0.003084858804486661,
+      "ci": [
+        -0.0069621974288618625,
+        -0.0004856704595687073
+      ],
+      "p_wilcoxon_holm": 0.2891211408689098,
+      "cohen_dz": -0.10352201691042545
+    },
+    {
+      "retriever": "bm25",
+      "protocol": "lodo",
+      "model": "stump",
+      "dataset": "ALL",
+      "policy": 0.40210297069921375,
+      "const": 0.4046667794994929,
+      "delta": -0.002563808800279127,
+      "ci": [
+        -0.004657037411333009,
+        -0.0006293280424494698
+      ],
+      "p_wilcoxon_holm": NaN,
+      "cohen_dz": -0.06685191242448739
+    },
+    {
+      "retriever": "bm25",
+      "protocol": "lodo",
+      "model": "ridge",
+      "dataset": "nfcorpus",
+      "policy": 0.3419438130118445,
+      "const": 0.34272910637790627,
+      "delta": -0.0007852933660617287,
+      "ci": [
+        -0.002229031186506568,
+        0.0004499486812289743
+      ],
+      "p_wilcoxon_holm": 1.0,
+      "cohen_dz": -0.06351584492109426
+    },
+    {
+      "retriever": "bm25",
+      "protocol": "lodo",
+      "model": "ridge",
+      "dataset": "ALL",
+      "policy": 0.4043621653484499,
+      "const": 0.4046667794994929,
+      "delta": -0.00030461415104305256,
+      "ci": [
+        -0.0018384059430990854,
+        0.0014128201441306189
+      ],
+      "p_wilcoxon_holm": NaN,
+      "cohen_dz": -0.0100045560402076
+    },
+    {
+      "retriever": "bm25",
+      "protocol": "lodo",
+      "model": "gbr",
+      "dataset": "nfcorpus",
+      "policy": 0.34272910637790627,
+      "const": 0.34272910637790627,
+      "delta": 0.0,
+      "ci": [
+        0.0,
+        0.0
+      ],
+      "p_wilcoxon_holm": 1.0,
+      "cohen_dz": NaN
+    },
+    {
+      "retriever": "bm25",
+      "protocol": "lodo",
+      "model": "gbr",
+      "dataset": "ALL",
+      "policy": 0.4047829749132071,
+      "const": 0.4046667794994929,
+      "delta": 0.00011619541371417835,
+      "ci": [
+        -0.0004134324563831946,
+        0.0007620186975257297
+      ],
+      "p_wilcoxon_holm": NaN,
+      "cohen_dz": 0.01058359294899411
+    },
+    {
+      "retriever": "dense",
+      "protocol": "within",
+      "model": "stump",
+      "dataset": "nfcorpus",
+      "policy": 0.3329405447403042,
+      "const": 0.3352347293106526,
+      "delta": -0.002294184570348374,
+      "ci": [
+        -0.005010046431878291,
+        0.00046457445998317355
+      ],
+      "p_wilcoxon_holm": 0.4330450919795043,
+      "cohen_dz": -0.09160322884835503
+    },
+    {
+      "retriever": "dense",
+      "protocol": "within",
+      "model": "stump",
+      "dataset": "ALL",
+      "policy": 0.43868842989592344,
+      "const": 0.44094464569264374,
+      "delta": -0.0022562157967202364,
+      "ci": [
+        -0.0037627079641952064,
+        -0.0007658945053776182
+      ],
+      "p_wilcoxon_holm": NaN,
+      "cohen_dz": -0.07839368724198047
+    },
+    {
+      "retriever": "dense",
+      "protocol": "within",
+      "model": "ridge",
+      "dataset": "nfcorpus",
+      "policy": 0.35686746224538135,
+      "const": 0.3352347293106526,
+      "delta": 0.021632732934728713,
+      "ci": [
+        0.008636695559635463,
+        0.03570180656910921
+      ],
+      "p_wilcoxon_holm": 0.26917287172476806,
+      "cohen_dz": 0.17168929327033486
+    },
+    {
+      "retriever": "dense",
+      "protocol": "within",
+      "model": "ridge",
+      "dataset": "ALL",
+      "policy": 0.4439336689256511,
+      "const": 0.44094464569264374,
+      "delta": 0.0029890232330074076,
+      "ci": [
+        -0.00046235399534886207,
+        0.006814093336325454
+      ],
+      "p_wilcoxon_holm": NaN,
+      "cohen_dz": 0.0451238177498622
+    },
+    {
+      "retriever": "dense",
+      "protocol": "within",
+      "model": "gbr",
+      "dataset": "nfcorpus",
+      "policy": 0.3588463191047826,
+      "const": 0.3352347293106526,
+      "delta": 0.023611589794129997,
+      "ci": [
+        0.010529143558159959,
+        0.037531024853897706
+      ],
+      "p_wilcoxon_holm": 0.5178063174578058,
+      "cohen_dz": 0.18527165907671297
+    },
+    {
+      "retriever": "dense",
+      "protocol": "within",
+      "model": "gbr",
+      "dataset": "ALL",
+      "policy": 0.445083701216744,
+      "const": 0.44094464569264374,
+      "delta": 0.004139055524100294,
+      "ci": [
+        0.0007623212608338359,
+        0.00803348901696701
+      ],
+      "p_wilcoxon_holm": NaN,
+      "cohen_dz": 0.061507383915000026
+    },
+    {
+      "retriever": "dense",
+      "protocol": "lodo",
+      "model": "stump",
+      "dataset": "nfcorpus",
+      "policy": 0.3328268689816823,
+      "const": 0.3352347293106526,
+      "delta": -0.002407860328970342,
+      "ci": [
+        -0.005906535397325232,
+        0.0006424257003082803
+      ],
+      "p_wilcoxon_holm": 0.9427867492491915,
+      "cohen_dz": -0.07765186918741253
+    },
+    {
+      "retriever": "dense",
+      "protocol": "lodo",
+      "model": "stump",
+      "dataset": "ALL",
+      "policy": 0.4403867374682693,
+      "const": 0.44094464569264374,
+      "delta": -0.0005579082243744173,
+      "ci": [
+        -0.0025149512819558433,
+        0.0013456888816178777
+      ],
+      "p_wilcoxon_holm": NaN,
+      "cohen_dz": -0.015173082324412526
+    },
+    {
+      "retriever": "dense",
+      "protocol": "lodo",
+      "model": "ridge",
+      "dataset": "nfcorpus",
+      "policy": 0.33571328763752073,
+      "const": 0.3352347293106526,
+      "delta": 0.0004785583268681061,
+      "ci": [
+        0.0,
+        0.0012207176371468035
+      ],
+      "p_wilcoxon_holm": 1.0,
+      "cohen_dz": 0.07840491299956832
+    },
+    {
+      "retriever": "dense",
+      "protocol": "lodo",
+      "model": "ridge",
+      "dataset": "ALL",
+      "policy": 0.4385576081869231,
+      "const": 0.44094464569264374,
+      "delta": -0.0023870375057206557,
+      "ci": [
+        -0.005173983021698145,
+        0.00033639828713005266
+      ],
+      "p_wilcoxon_holm": NaN,
+      "cohen_dz": -0.04570831652199538
+    },
+    {
+      "retriever": "dense",
+      "protocol": "lodo",
+      "model": "gbr",
+      "dataset": "nfcorpus",
+      "policy": 0.33376208578280775,
+      "const": 0.3352347293106526,
+      "delta": -0.0014726435278448957,
+      "ci": [
+        -0.003287678757585238,
+        4.409041828137962e-05
+      ],
+      "p_wilcoxon_holm": 1.0,
+      "cohen_dz": -0.09589999677685634
+    },
+    {
+      "retriever": "dense",
+      "protocol": "lodo",
+      "model": "gbr",
+      "dataset": "ALL",
+      "policy": 0.44043609168913445,
+      "const": 0.44094464569264374,
+      "delta": -0.0005085540035092406,
+      "ci": [
+        -0.0027963298342149165,
+        0.001978124265707538
+      ],
+      "p_wilcoxon_holm": NaN,
+      "cohen_dz": -0.010935540184258944
+    }
+  ],
+  "null_summary": [
+    {
+      "retriever": "bm25",
+      "protocol": "lodo",
+      "model": "gbr",
+      "dataset": "ALL",
+      "n_null": 20,
+      "null_mean": -3.7337395228208497e-05,
+      "null_sd": 0.00019023219250224513,
+      "null_se": 4.253721139438459e-05,
+      "null_p05": -0.00019646867943765982,
+      "null_p95": 0.00019369516130402325,
+      "real_delta": 0.00011619541371417835,
+      "z": 0.807081109263748,
+      "emp_p_upper": 0.14285714285714285,
+      "emp_p_two_sided": 0.19047619047619047
+    },
+    {
+      "retriever": "bm25",
+      "protocol": "lodo",
+      "model": "ridge",
+      "dataset": "ALL",
+      "n_null": 20,
+      "null_mean": -0.0001590906943870402,
+      "null_sd": 0.00034162835134922816,
+      "null_se": 7.639042166580562e-05,
+      "null_p05": -0.0007285567810840056,
+      "null_p95": 0.00030773377799541714,
+      "real_delta": -0.00030461415104305256,
+      "z": -0.42597008146800913,
+      "emp_p_upper": 0.8571428571428571,
+      "emp_p_two_sided": 0.47619047619047616
+    },
+    {
+      "retriever": "bm25",
+      "protocol": "within",
+      "model": "gbr",
+      "dataset": "ALL",
+      "n_null": 20,
+      "null_mean": -0.002402871073231468,
+      "null_sd": 0.0012032386340123055,
+      "null_se": 0.00026905233788055056,
+      "null_p05": -0.004432578775020733,
+      "null_p95": -0.0006416272262768908,
+      "real_delta": -0.002400339935426378,
+      "z": 0.0021036041675706624,
+      "emp_p_upper": 0.6190476190476191,
+      "emp_p_two_sided": 1.0
+    },
+    {
+      "retriever": "bm25",
+      "protocol": "within",
+      "model": "ridge",
+      "dataset": "ALL",
+      "n_null": 20,
+      "null_mean": -0.0017857850688328372,
+      "null_sd": 0.0009955670862482275,
+      "null_se": 0.00022261556810124325,
+      "null_p05": -0.0032937618161159787,
+      "null_p95": -0.0007257116215236973,
+      "real_delta": -0.0020673998926727926,
+      "z": -0.282868756641217,
+      "emp_p_upper": 0.6666666666666666,
+      "emp_p_two_sided": 0.7619047619047619
+    },
+    {
+      "retriever": "dense",
+      "protocol": "lodo",
+      "model": "gbr",
+      "dataset": "ALL",
+      "n_null": 20,
+      "null_mean": -0.0016188941619610267,
+      "null_sd": 0.0012143750186714146,
+      "null_se": 0.00027154250919268595,
+      "null_p05": -0.0030909894729030073,
+      "null_p95": -0.00019948450205310147,
+      "real_delta": -0.0005085540035092406,
+      "z": 0.9143305333030913,
+      "emp_p_upper": 0.23809523809523808,
+      "emp_p_two_sided": 0.42857142857142855
+    },
+    {
+      "retriever": "dense",
+      "protocol": "lodo",
+      "model": "ridge",
+      "dataset": "ALL",
+      "n_null": 20,
+      "null_mean": -0.001015754068651216,
+      "null_sd": 0.0006450261568912698,
+      "null_se": 0.00014423223340743235,
+      "null_p05": -0.0019464152950682844,
+      "null_p95": -0.0001255998158396031,
+      "real_delta": -0.0023870375057206557,
+      "z": -2.1259346189593256,
+      "emp_p_upper": 0.9523809523809523,
+      "emp_p_two_sided": 0.09523809523809523
+    },
+    {
+      "retriever": "dense",
+      "protocol": "within",
+      "model": "gbr",
+      "dataset": "ALL",
+      "n_null": 20,
+      "null_mean": -0.0037871798701017423,
+      "null_sd": 0.002011094360311533,
+      "null_se": 0.00044969436988230425,
+      "null_p05": -0.005804801954643516,
+      "null_p95": -0.0014889579516732727,
+      "real_delta": 0.004139055524100294,
+      "z": 3.9412548464280936,
+      "emp_p_upper": 0.047619047619047616,
+      "emp_p_two_sided": 0.047619047619047616
+    },
+    {
+      "retriever": "dense",
+      "protocol": "within",
+      "model": "ridge",
+      "dataset": "ALL",
+      "n_null": 20,
+      "null_mean": -0.0023429850079385523,
+      "null_sd": 0.0011038773245552868,
+      "null_se": 0.0002468344736526219,
+      "null_p05": -0.0038372379361700897,
+      "null_p95": -0.0007536616833071432,
+      "real_delta": 0.0029890232330074076,
+      "z": 4.830254342885463,
+      "emp_p_upper": 0.047619047619047616,
+      "emp_p_two_sided": 0.047619047619047616
+    }
+  ],
+  "best_fixed_rows": [
+    {
+      "retriever": "bm25",
+      "protocol": "within",
+      "model": "const",
+      "policy_mean": 0.4046667794994929,
+      "baseline_mean": 0.4046667794994929,
+      "mean_delta": 0.0,
+      "ci_lo": 0.0,
+      "ci_hi": 0.0
+    },
+    {
+      "retriever": "bm25",
+      "protocol": "within",
+      "model": "stump",
+      "policy_mean": 0.4020890608477529,
+      "baseline_mean": 0.4046667794994929,
+      "mean_delta": -0.0025777186517399893,
+      "ci_lo": -0.004142383167127781,
+      "ci_hi": -0.0011181436627173082
+    },
+    {
+      "retriever": "bm25",
+      "protocol": "within",
+      "model": "ridge",
+      "policy_mean": 0.40259937960682013,
+      "baseline_mean": 0.4046667794994929,
+      "mean_delta": -0.0020673998926727926,
+      "ci_lo": -0.0034459357891452056,
+      "ci_hi": -0.0007477349741676595
+    },
+    {
+      "retriever": "bm25",
+      "protocol": "within",
+      "model": "gbr",
+      "policy_mean": 0.4022664395640665,
+      "baseline_mean": 0.4046667794994929,
+      "mean_delta": -0.002400339935426378,
+      "ci_lo": -0.004209851857765716,
+      "ci_hi": -0.0006116966227685336
+    },
+    {
+      "retriever": "bm25",
+      "protocol": "lodo",
+      "model": "const",
+      "policy_mean": 0.4046667794994929,
+      "baseline_mean": 0.4046667794994929,
+      "mean_delta": 0.0,
+      "ci_lo": 0.0,
+      "ci_hi": 0.0
+    },
+    {
+      "retriever": "bm25",
+      "protocol": "lodo",
+      "model": "stump",
+      "policy_mean": 0.40210297069921375,
+      "baseline_mean": 0.4046667794994929,
+      "mean_delta": -0.002563808800279127,
+      "ci_lo": -0.004657037411333009,
+      "ci_hi": -0.0006293280424494698
+    },
+    {
+      "retriever": "bm25",
+      "protocol": "lodo",
+      "model": "ridge",
+      "policy_mean": 0.4043621653484499,
+      "baseline_mean": 0.4046667794994929,
+      "mean_delta": -0.00030461415104305256,
+      "ci_lo": -0.0018384059430990854,
+      "ci_hi": 0.0014128201441306189
+    },
+    {
+      "retriever": "bm25",
+      "protocol": "lodo",
+      "model": "gbr",
+      "policy_mean": 0.4047829749132071,
+      "baseline_mean": 0.4046667794994929,
+      "mean_delta": 0.00011619541371417835,
+      "ci_lo": -0.0004134324563831946,
+      "ci_hi": 0.0007620186975257297
+    },
+    {
+      "retriever": "dense",
+      "protocol": "within",
+      "model": "const",
+      "policy_mean": 0.44094464569264374,
+      "baseline_mean": 0.4385591118760043,
+      "mean_delta": 0.002385533816639415,
+      "ci_lo": 0.0009487678489486107,
+      "ci_hi": 0.003835525878124253
+    },
+    {
+      "retriever": "dense",
+      "protocol": "within",
+      "model": "stump",
+      "policy_mean": 0.43868842989592344,
+      "baseline_mean": 0.4385591118760043,
+      "mean_delta": 0.000129318019919178,
+      "ci_lo": -0.0018160638513077807,
+      "ci_hi": 0.0021018285892247792
+    },
+    {
+      "retriever": "dense",
+      "protocol": "within",
+      "model": "ridge",
+      "policy_mean": 0.4439336689256511,
+      "baseline_mean": 0.4385591118760043,
+      "mean_delta": 0.005374557049646824,
+      "ci_lo": 0.0018459695382189386,
+      "ci_hi": 0.009109993646075752
+    },
+    {
+      "retriever": "dense",
+      "protocol": "within",
+      "model": "gbr",
+      "policy_mean": 0.445083701216744,
+      "baseline_mean": 0.4385591118760043,
+      "mean_delta": 0.006524589340739709,
+      "ci_lo": 0.0030913509172811305,
+      "ci_hi": 0.010365979703697245
+    },
+    {
+      "retriever": "dense",
+      "protocol": "lodo",
+      "model": "const",
+      "policy_mean": 0.44094464569264374,
+      "baseline_mean": 0.44094464569264374,
+      "mean_delta": 0.0,
+      "ci_lo": 0.0,
+      "ci_hi": 0.0
+    },
+    {
+      "retriever": "dense",
+      "protocol": "lodo",
+      "model": "stump",
+      "policy_mean": 0.4403867374682693,
+      "baseline_mean": 0.44094464569264374,
+      "mean_delta": -0.0005579082243744173,
+      "ci_lo": -0.0025149512819558433,
+      "ci_hi": 0.0013456888816178777
+    },
+    {
+      "retriever": "dense",
+      "protocol": "lodo",
+      "model": "ridge",
+      "policy_mean": 0.4385576081869231,
+      "baseline_mean": 0.44094464569264374,
+      "mean_delta": -0.0023870375057206557,
+      "ci_lo": -0.005173983021698145,
+      "ci_hi": 0.00033639828713005266
+    },
+    {
+      "retriever": "dense",
+      "protocol": "lodo",
+      "model": "gbr",
+      "policy_mean": 0.44043609168913445,
+      "baseline_mean": 0.44094464569264374,
+      "mean_delta": -0.0005085540035092406,
+      "ci_lo": -0.0027963298342149165,
+      "ci_hi": 0.001978124265707538
+    }
+  ],
+  "acceptance_failed": [],
+  "git_commit": "d0fef27a8e4229897380eea6d122b03dc9f6a6dd"
+}

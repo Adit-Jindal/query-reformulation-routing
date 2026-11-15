@@ -1,0 +1,14 @@
+\begin{table}
+\caption{Decision tree vs majority class (oracle best action).}
+\label{tab:b-tree}
+\begin{tabular}{llrrrrr}
+\toprule
+retriever & protocol & tree\_acc & majority\_acc & null\_p95 & p\_vs\_null & beats\_majority \\
+\midrule
+bm25 & kfold & 0.470 & 0.486 & 0.480 & 0.608 & False \\
+bm25 & lodo & 0.463 & 0.486 & 0.479 & 0.549 & False \\
+dense & kfold & 0.484 & 0.493 & 0.489 & 0.235 & False \\
+dense & lodo & 0.490 & 0.493 & 0.485 & 0.039 & False \\
+\bottomrule
+\end{tabular}
+\end{table}

@@ -1,0 +1,17 @@
+\begin{table}[t]\centering\small
+\caption{Shuffled-feature null versus real router (router minus Const, ALL).}\label{tab:c7}
+\begin{tabular}{lllllllll}
+\toprule
+retriever & protocol & model & n\_null & null\_mean & null\_sd & real\_delta & z & emp\_p\_upper \\
+\midrule
+bm25 & lodo & gbr & 20 & -0.0000 & 0.0002 & 0.0001 & 0.8071 & 0.1429 \\
+bm25 & lodo & ridge & 20 & -0.0002 & 0.0003 & -0.0003 & -0.4260 & 0.8571 \\
+bm25 & within & gbr & 20 & -0.0024 & 0.0012 & -0.0024 & 0.0021 & 0.6190 \\
+bm25 & within & ridge & 20 & -0.0018 & 0.0010 & -0.0021 & -0.2829 & 0.6667 \\
+dense & lodo & gbr & 20 & -0.0016 & 0.0012 & -0.0005 & 0.9143 & 0.2381 \\
+dense & lodo & ridge & 20 & -0.0010 & 0.0006 & -0.0024 & -2.1259 & 0.9524 \\
+dense & within & gbr & 20 & -0.0038 & 0.0020 & 0.0041 & 3.9413 & 0.0476 \\
+dense & within & ridge & 20 & -0.0023 & 0.0011 & 0.0030 & 4.8303 & 0.0476 \\
+\bottomrule
+\end{tabular}
+\end{table}

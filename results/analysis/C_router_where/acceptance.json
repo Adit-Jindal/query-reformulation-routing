@@ -1,0 +1,232 @@
+[
+  {
+    "check": "bm25: query count == 1370",
+    "ok": true,
+    "detail": 1370
+  },
+  {
+    "check": "bm25/within/const: L3 ALL nDCG@10 matches log (0.4047)",
+    "ok": true,
+    "detail": 0.40467
+  },
+  {
+    "check": "bm25/within/stump: L3 ALL nDCG@10 matches log (0.4021)",
+    "ok": true,
+    "detail": 0.40209
+  },
+  {
+    "check": "bm25/within/ridge: L3 ALL nDCG@10 matches log (0.4026)",
+    "ok": true,
+    "detail": 0.4026
+  },
+  {
+    "check": "bm25/within/gbr: L3 ALL nDCG@10 matches log (0.4023)",
+    "ok": true,
+    "detail": 0.40227
+  },
+  {
+    "check": "bm25/within: Const == query2doc (share, |mean gap|)",
+    "ok": true,
+    "detail": "1.0000, 0.00000"
+  },
+  {
+    "check": "bm25/within/const: custom L3 values == routing.evaluate",
+    "ok": true,
+    "detail": 1.1102230246251565e-16
+  },
+  {
+    "check": "bm25/within/stump: custom L3 values == routing.evaluate",
+    "ok": true,
+    "detail": 1.1102230246251565e-16
+  },
+  {
+    "check": "bm25/within/ridge: custom L3 values == routing.evaluate",
+    "ok": true,
+    "detail": 1.1102230246251565e-16
+  },
+  {
+    "check": "bm25/within/gbr: custom L3 values == routing.evaluate",
+    "ok": true,
+    "detail": 1.1102230246251565e-16
+  },
+  {
+    "check": "bm25/lodo/const: L3 ALL nDCG@10 matches log (0.4047)",
+    "ok": true,
+    "detail": 0.40467
+  },
+  {
+    "check": "bm25/lodo/stump: L3 ALL nDCG@10 matches log (0.4021)",
+    "ok": true,
+    "detail": 0.4021
+  },
+  {
+    "check": "bm25/lodo/ridge: L3 ALL nDCG@10 matches log (0.4044)",
+    "ok": true,
+    "detail": 0.40436
+  },
+  {
+    "check": "bm25/lodo/gbr: L3 ALL nDCG@10 matches log (0.4048)",
+    "ok": true,
+    "detail": 0.40478
+  },
+  {
+    "check": "bm25/lodo: Const == query2doc (share, |mean gap|)",
+    "ok": true,
+    "detail": "1.0000, 0.00000"
+  },
+  {
+    "check": "bm25/lodo/const: custom L3 values == routing.evaluate",
+    "ok": true,
+    "detail": 0.0
+  },
+  {
+    "check": "bm25/lodo/stump: custom L3 values == routing.evaluate",
+    "ok": true,
+    "detail": 0.0
+  },
+  {
+    "check": "bm25/lodo/ridge: custom L3 values == routing.evaluate",
+    "ok": true,
+    "detail": 0.0
+  },
+  {
+    "check": "bm25/lodo/gbr: custom L3 values == routing.evaluate",
+    "ok": true,
+    "detail": 0.0
+  },
+  {
+    "check": "dense: query count == 1370",
+    "ok": true,
+    "detail": 1370
+  },
+  {
+    "check": "dense/within/const: L3 ALL nDCG@10 matches log (0.4409)",
+    "ok": true,
+    "detail": 0.44094
+  },
+  {
+    "check": "dense/within/stump: L3 ALL nDCG@10 matches log (0.4387)",
+    "ok": true,
+    "detail": 0.43869
+  },
+  {
+    "check": "dense/within/ridge: L3 ALL nDCG@10 matches log (0.4439)",
+    "ok": true,
+    "detail": 0.44393
+  },
+  {
+    "check": "dense/within/gbr: L3 ALL nDCG@10 matches log (0.4451)",
+    "ok": true,
+    "detail": 0.44508
+  },
+  {
+    "check": "dense/within: Const == query2doc (share, |mean gap|)",
+    "ok": true,
+    "detail": "1.0000, 0.00000"
+  },
+  {
+    "check": "dense/within/const: custom L3 values == routing.evaluate",
+    "ok": true,
+    "detail": 1.1102230246251565e-16
+  },
+  {
+    "check": "dense/within/stump: custom L3 values == routing.evaluate",
+    "ok": true,
+    "detail": 1.1102230246251565e-16
+  },
+  {
+    "check": "dense/within/ridge: custom L3 values == routing.evaluate",
+    "ok": true,
+    "detail": 1.1102230246251565e-16
+  },
+  {
+    "check": "dense/within/gbr: custom L3 values == routing.evaluate",
+    "ok": true,
+    "detail": 1.1102230246251565e-16
+  },
+  {
+    "check": "dense/lodo/const: L3 ALL nDCG@10 matches log (0.4409)",
+    "ok": true,
+    "detail": 0.44094
+  },
+  {
+    "check": "dense/lodo/stump: L3 ALL nDCG@10 matches log (0.4404)",
+    "ok": true,
+    "detail": 0.44039
+  },
+  {
+    "check": "dense/lodo/ridge: L3 ALL nDCG@10 matches log (0.4386)",
+    "ok": true,
+    "detail": 0.43856
+  },
+  {
+    "check": "dense/lodo/gbr: L3 ALL nDCG@10 matches log (0.4404)",
+    "ok": true,
+    "detail": 0.44044
+  },
+  {
+    "check": "dense/lodo: Const == query2doc (share, |mean gap|)",
+    "ok": true,
+    "detail": "1.0000, 0.00000"
+  },
+  {
+    "check": "dense/lodo/const: custom L3 values == routing.evaluate",
+    "ok": true,
+    "detail": 0.0
+  },
+  {
+    "check": "dense/lodo/stump: custom L3 values == routing.evaluate",
+    "ok": true,
+    "detail": 0.0
+  },
+  {
+    "check": "dense/lodo/ridge: custom L3 values == routing.evaluate",
+    "ok": true,
+    "detail": 0.0
+  },
+  {
+    "check": "dense/lodo/gbr: custom L3 values == routing.evaluate",
+    "ok": true,
+    "detail": 0.0
+  },
+  {
+    "check": "null mean ~ 0: bm25/lodo/gbr",
+    "ok": true,
+    "detail": "-0.00004 +- 0.00004"
+  },
+  {
+    "check": "null mean ~ 0: bm25/lodo/ridge",
+    "ok": true,
+    "detail": "-0.00016 +- 0.00008"
+  },
+  {
+    "check": "null mean ~ 0: bm25/within/gbr",
+    "ok": true,
+    "detail": "-0.00240 +- 0.00027"
+  },
+  {
+    "check": "null mean ~ 0: bm25/within/ridge",
+    "ok": true,
+    "detail": "-0.00179 +- 0.00022"
+  },
+  {
+    "check": "null mean ~ 0: dense/lodo/gbr",
+    "ok": true,
+    "detail": "-0.00162 +- 0.00027"
+  },
+  {
+    "check": "null mean ~ 0: dense/lodo/ridge",
+    "ok": true,
+    "detail": "-0.00102 +- 0.00014"
+  },
+  {
+    "check": "null mean ~ 0: dense/within/gbr",
+    "ok": true,
+    "detail": "-0.00379 +- 0.00045"
+  },
+  {
+    "check": "null mean ~ 0: dense/within/ridge",
+    "ok": true,
+    "detail": "-0.00234 +- 0.00025"
+  }
+]

@@ -1,0 +1,105 @@
+Decision-tree rules (exploratory). Features are z-scored per dataset.
+
+=== retriever=bm25 target=oracle_best_action (fit on all 1370 queries; depth<=3) ===
+class counts: a0=666, decomp=128, hyde=207, prf=164, query2doc=205
+|--- s0_oov_frac <= -0.43
+|   |--- s1_bm25_gap1_2 <= -0.47
+|   |   |--- s0_idf_std <= -1.15
+|   |   |   |--- class: a0
+|   |   |--- s0_idf_std >  -1.15
+|   |   |   |--- class: a0
+|   |--- s1_bm25_gap1_2 >  -0.47
+|   |   |--- s1_bm25_norm_mean10 <= 0.00
+|   |   |   |--- class: a0
+|   |   |--- s1_bm25_norm_mean10 >  0.00
+|   |   |   |--- class: a0
+|--- s0_oov_frac >  -0.43
+|   |--- s1_bm25_mean10 <= -0.98
+|   |   |--- s1_bm25_wig <= -1.05
+|   |   |   |--- class: a0
+|   |   |--- s1_bm25_wig >  -1.05
+|   |   |   |--- class: a0
+|   |--- s1_bm25_mean10 >  -0.98
+|   |   |--- s1_overlap10 <= -1.10
+|   |   |   |--- class: a0
+|   |   |--- s1_overlap10 >  -1.10
+|   |   |   |--- class: a0
+
+
+=== retriever=bm25 target=oracle_go (fit on all 1370 queries; depth<=3) ===
+class counts: go=704, nogo=666
+|--- s0_oov_frac <= -0.43
+|   |--- s1_bm25_gap1_2 <= -0.15
+|   |   |--- s0_idf_std <= 0.45
+|   |   |   |--- class: go
+|   |   |--- s0_idf_std >  0.45
+|   |   |   |--- class: nogo
+|   |--- s1_bm25_gap1_2 >  -0.15
+|   |   |--- s0_idf_min <= -0.89
+|   |   |   |--- class: nogo
+|   |   |--- s0_idf_min >  -0.89
+|   |   |   |--- class: nogo
+|--- s0_oov_frac >  -0.43
+|   |--- s1_overlap100 <= -1.10
+|   |   |--- s0_idf_mean <= 0.32
+|   |   |   |--- class: nogo
+|   |   |--- s0_idf_mean >  0.32
+|   |   |   |--- class: nogo
+|   |--- s1_overlap100 >  -1.10
+|   |   |--- s0_idf_min <= -0.46
+|   |   |   |--- class: go
+|   |   |--- s0_idf_min >  -0.46
+|   |   |   |--- class: go
+
+
+=== retriever=dense target=oracle_best_action (fit on all 1370 queries; depth<=3) ===
+class counts: a0=676, decomp=111, hyde=134, prf=247, query2doc=202
+|--- s1_dense_gap1_2 <= -0.39
+|   |--- s1_dense_nqc <= -0.69
+|   |   |--- s0_has_qmark <= -1.03
+|   |   |   |--- class: a0
+|   |   |--- s0_has_qmark >  -1.03
+|   |   |   |--- class: a0
+|   |--- s1_dense_nqc >  -0.69
+|   |   |--- s1_dense_entropy100 <= 0.27
+|   |   |   |--- class: a0
+|   |   |--- s1_dense_entropy100 >  0.27
+|   |   |   |--- class: a0
+|--- s1_dense_gap1_2 >  -0.39
+|   |--- s0_oov_frac <= -0.43
+|   |   |--- s1_dense_norm_mean10 <= 0.24
+|   |   |   |--- class: a0
+|   |   |--- s1_dense_norm_mean10 >  0.24
+|   |   |   |--- class: a0
+|   |--- s0_oov_frac >  -0.43
+|   |   |--- s0_n_digit_tokens <= -0.20
+|   |   |   |--- class: a0
+|   |   |--- s0_n_digit_tokens >  -0.20
+|   |   |   |--- class: a0
+
+
+=== retriever=dense target=oracle_go (fit on all 1370 queries; depth<=3) ===
+class counts: go=694, nogo=676
+|--- s1_dense_gap1_2 <= -0.39
+|   |--- s1_dense_nqc <= -0.68
+|   |   |--- s0_has_qmark <= -1.03
+|   |   |   |--- class: nogo
+|   |   |--- s0_has_qmark >  -1.03
+|   |   |   |--- class: go
+|   |--- s1_dense_nqc >  -0.68
+|   |   |--- s1_dense_entropy100 <= 0.27
+|   |   |   |--- class: go
+|   |   |--- s1_dense_entropy100 >  0.27
+|   |   |   |--- class: go
+|--- s1_dense_gap1_2 >  -0.39
+|   |--- s0_oov_frac <= -0.43
+|   |   |--- s1_dense_norm_mean10 <= 0.24
+|   |   |   |--- class: nogo
+|   |   |--- s1_dense_norm_mean10 >  0.24
+|   |   |   |--- class: go
+|   |--- s0_oov_frac >  -0.43
+|   |   |--- s0_n_digit_tokens <= -0.20
+|   |   |   |--- class: nogo
+|   |   |--- s0_n_digit_tokens >  -0.20
+|   |   |   |--- class: go
+

@@ -1,0 +1,69 @@
+{
+  "settings": {
+    "B": 10000,
+    "zero_method": "pratt",
+    "tie_tol": 1e-09,
+    "alpha": 0.05,
+    "ci": "percentile 95%",
+    "p_boot": "2*min(P(mean<=0),P(mean>=0)), floor 1/B",
+    "multiplicity": "Holm (primary families); BH (exploratory, separate columns)",
+    "random_effects": "DerSimonian-Laird tau2, Hartung-Knapp t CI",
+    "seed": 0,
+    "folds": 5,
+    "repeats": 3,
+    "tuned": true,
+    "smoke": false
+  },
+  "primary_router": {
+    "retriever": "dense",
+    "model": "gbr",
+    "protocol": "within"
+  },
+  "git_commit": "d0fef27a8e4229897380eea6d122b03dc9f6a6dd",
+  "datasets": [
+    "scifact",
+    "trec-covid",
+    "nfcorpus",
+    "fiqa",
+    "webis-touche2020"
+  ],
+  "n_queries": 1370,
+  "headline_macro": {
+    "bm25/gbr/within/H1": {
+      "mean_delta": -0.008175385115598979,
+      "ci_lo": -0.012970862204450486,
+      "ci_hi": -0.00395504563494613,
+      "p": 0.0001
+    },
+    "bm25/gbr/within/H2": {
+      "mean_delta": -0.00817538511559898,
+      "ci_lo": -0.012970862204450491,
+      "ci_hi": -0.003955045634946132,
+      "p": 0.0001
+    },
+    "dense/gbr/within/H1": {
+      "mean_delta": 0.000836854884702431,
+      "ci_lo": -0.0036011538403973023,
+      "ci_hi": 0.005201555445059994,
+      "p": 0.689
+    },
+    "dense/gbr/within/H2": {
+      "mean_delta": 0.002370556616727803,
+      "ci_lo": -0.002102399470763027,
+      "ci_hi": 0.006706971070927653,
+      "p": 0.2756
+    }
+  },
+  "H3_query2doc_minus_a0_ALL": {
+    "bm25": 0.04301925348173426,
+    "dense": 0.027529876298161695
+  },
+  "null_calibration_sign_flip": {
+    "reps": 200,
+    "alpha": 0.05,
+    "reject_rate_boot": 0.04,
+    "reject_rate_wilcoxon": 0.1
+  },
+  "check_vs_iteration_results_max_abs_diff": 8.326672684688674e-17,
+  "boot_wilcoxon_disagreements": 20
+}
